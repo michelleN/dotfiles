@@ -1,0 +1,29 @@
+[alias]
+	a = add
+	ap = add -p
+	b = branch
+	co = checkout
+	cp = cherry-pick
+	cv = commit -v
+	f = fetch
+	pl = pull --rebase
+	ri = rebase -i
+	st = status
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+
+[push]
+	default = current
+
+[user]
+	name = Michelle Noorali
+	email = michellemolu@gmail.com
+
+
