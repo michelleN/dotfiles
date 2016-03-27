@@ -1,1 +1,1 @@
-source $HOME/aliase	#aliasess
+source $HOME/aliases	#aliasess
