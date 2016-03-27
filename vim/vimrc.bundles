@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/bundle')
 
 let g:plug_url_format="git://github.com/%s"
 
@@ -26,7 +26,6 @@ Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'slack/vim-align'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-dotenv'
 Plug 'tpope/vim-fugitive'
