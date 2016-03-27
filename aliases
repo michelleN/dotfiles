@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-alias dmcode='cd ~$GOPATH/src/github.com/kubernetes/helm'
+alias dmcode='cd $GOPATH/src/github.com/kubernetes/helm'
+alias walksee='cd $GOPATH/src/github.com/michelleN/walksee'
