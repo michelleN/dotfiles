@@ -9,7 +9,10 @@ shell:
 	ln -fs ${DOTFILES}/zsh/zshrc ${HOME}/.zshrc
 
 vim:
+	ln -fns $(DOTFILES)/vim ${HOME}/.vim
 	ln -fs $(DOTFILES)/vimrc ${HOME}/.vimrc
+	ln -fs $(DOTFILES)/vim/vimrc.bundles ${HOME}/.vimrc.bundles
+	ln -fs $(DOTFILES)/vim/gvimrc ${HOME}/.gvimrc
 
 git:
 	ln -fs $(DOTFILES)/gitconfig ${HOME}/.gitconfig
