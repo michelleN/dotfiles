@@ -42,22 +42,11 @@ export HISTFILESIZE=9999
 export HISTSIZE=9999
 
 
-# The next line enables bash completion for gcloud.
-source '/Users/michellenoorali/google-cloud-sdk/completion.bash.inc'
-
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/michellenoorali/google-cloud-sdk/path.bash.inc'
-
-# The next line enables shell command completion for gcloud.
-source '/Users/michellenoorali/google-cloud-sdk/completion.bash.inc'
-
 export PATH="$HOME/sbin:/usr/local/bin:$PATH:/usr/local/git/bin:/usr/local/sbin:$GOPATH/bin"
-
-eval "$(direnv hook bash)"
-
 alias record="asciinema"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 export PATH=$PATH:$HOME/dotfiles/bin
+
+PS1='\w \$ '
