@@ -1,116 +1,68 @@
-" ~/.vimrc
+" vim ftw
 set nocompatible
 
-" ================ General Config ====================
-set autoread                   "Reload files changed outside vim
-set backspace=indent,eol,start "Allow backspace in insert mode
-set encoding=utf-8
-set fileformats+=mac
-set gcr=a:blinkon0             "Disable cursor blink
-set hidden                     "Better buffer management
-set history=1000               "Store lots of :cmdline history
-set number                     "Line numbers are good
-set shell=/bin/bash
-set showcmd                    "Show incomplete cmds down the bottom
-set showmode                   "Show current mode down the bottom
-set scrolloff=7                "Set 7 lines to the cursor - when moving vertically using j/k
-set ttimeout
-set ttimeoutlen=100
-set visualbell                 "No sounds
-set exrc
-set secure
-set nocompatible
+" modelines
 set modelines=5
-set title                      "Set the title in xterm
-set hidden                     "Better buffer management
-set hlsearch
-set incsearch
 
-" ================ Turn Off Swap Files ==============
-set noswapfile
-set nobackup
-set nowb
+" pathogen.vim ftw
+filetype off
+call pathogen#incubate()
+call pathogen#helptags()
+execute pathogen#infect()
 
-" Trailing spaces and tabs
-set list
-set listchars=tab:>-,trail:*,nbsp:*
+" set the title in xterm
+set title
+
+" better buffer management
+set hidden
+
+" fixup backspace behavior
+set backspace=indent,eol,start
 
 let mapleader = ","
-
-" Save files when vim loses focus
-au FocusLost * silent! wa
+set history=1000
 
 " searching stuff
+set hlsearch
+set incsearch
 
 " Make <C-L> clear highlight and redraw
 nnoremap <C-L> :nohls<CR><C-L>
 inoremap <C-L> <C-O>:nohls<CR>
 
-" Edit the vimrc file
-nmap <leader>ev :tabedit $MYVIMRC<CR>
-nmap <leader>evb :tabedit ~/.vimrc.bundles<CR>
-nmap <leader>evn :tabedit ~/.vimrc.neocomplete<CR>
-nmap <leader>evr :source $MYVIMRC<CR>
+" ignore case only if there are no upcase letters in the search
+set ignorecase
+set smartcase
+
+" <tab> completion for filenames
+set wildmenu
+set wildmode=list:longest
+set complete-=i
+
+" turn syntax highlighting on
+syntax on
+
+" 256 colors, colorscheme
+set t_Co=256
+colorscheme xorium
+set vb t_vb=
 
 filetype plugin indent on
+set ruler
 
-" =============== vim-plug Initialization ===============
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
-endif
+" Trailling spaces and tabs
+set list
+set listchars=tab:>-,trail:*,nbsp:*
 
-if filereadable(expand("~/.vimrc.neocomplete"))
-  source ~/.vimrc.neocomplete
-endif
-
-" =============== UI ================
-" turn syntax highlighting on
-syntax enable
-colorscheme xorium
-
-highlight clear LineNr     " Current line number row will have same background color in relative mode
-highlight clear SignColumn " SignColumn should match background
-set nocursorline           " Highlight current line !!! disabled, runs slow
-set hlsearch               " Highlight search results
-set ignorecase             " Ignore case when searching
-set incsearch              " Makes search act like search in modern browsers
-set lazyredraw             " Don't redraw while executing macros (good performance config)
-set magic                  " For regular expressions turn magic on
-set mat=2                  " How many tenths of a second to blink when matching brackets
-set showmatch              " Show matching brackets when text indicator is over them
-set showmode               " Display the current mode
-set smartcase              " When searching try to be smart about cases
-set tabpagemax=15          " Only show 15 tabs
+set fileformat=unix
 set nobackup
-set smarttab
-set cursorline
 
-" ================ Completion =======================
-set wildmode=list:longest
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set complete-=i             "do not scan included files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.log,.git
+" Status Line
+set statusline=%F%m%r%h%w\ [f:%{&ff}\ t:%Y]\ [A:\%03.3b\ H:\%02.2B]\ [P:%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
+set laststatus=2
 
-" grep
-map <leader>a :Ag<space>
-map <leader>a* :Ag<space><cword><CR>
-let g:ag_prg="ag --column --smart-case --nogroup --nocolor --skip-vcs-ignores"
-
-set grepprg=ag\ --nogroup\ --nocolor
-if &grepformat !~# '%c'
-  set grepformat^=%f:%l:%c:%m
-endif
-
-" ================ Scrolling ========================
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
-set sidescrolloff=15
-set sidescroll=1
-
-" ================ Status Line ======================
-if has('cmdline_info')
-  set showcmd                 " Show partial commands in status line and
-  " Selected characters/lines in visual mode
-endif
+" use bash so that rvm works
+set shell=bash
 
 " NT bindings
 map <leader>n :NERDTreeToggle<CR>
@@ -138,6 +90,10 @@ map <leader>ct :set et <bar> retab<CR>
 map <leader>rts %s/\v\s+$//g<CR>
 map <leader>srt :!sort<CR>
 
+" Ruby
+map <leader>rs :!ruby -c %:p<CR>
+map <leader>r19 :s/\v:([0-9a-z_]+)\s+\=\>\s+/\1: /g<CR>
+map <leader>r18 :s/\v([0-9a-z_"']+):\s+(.*)/:\1 => \2/g<CR>
 
 " Haml
 map <leader>hs :!haml -c %:p<CR>
@@ -156,10 +112,6 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 
-" wrap indicator
-set colorcolumn=120
-highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
-
 " Movement
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
@@ -170,7 +122,12 @@ nnoremap <A-q> <C-w>q
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
-"nnoremap <C-l> <C-w>l
+nnoremap <C-l> <C-w>l
+
+" grep
+map <leader>a :Ack<space>
+map <leader>a* :Ack<space><cword><CR>
+
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.log,.git,*/bundle/*
@@ -178,32 +135,51 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 map <leader>f :CtrlP<CR>
 map <leader>g :CtrlPBuffer<CR>
 map <leader>cf :CtrlPClearCache<CR>
-" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --skip-vcs-ignores'
-"let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-" ag is fast enough that CtrlP doesn't need to cache
-let g:ctrlp_use_caching = 0
 
+" fuckups
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+cnoreabbrev <expr> Wa ((getcmdtype() is# ':' && getcmdline() is# 'Wa')?('wa'):('Wa'))
+cnoreabbrev <expr> Wqa ((getcmdtype() is# ':' && getcmdline() is# 'Wqa')?('wqa'):('Wqa'))
+cnoreabbrev <expr> E ((getcmdtype() is# ':' && getcmdline() is# 'E')?('e'):('E'))
 
-" Wrapped lines goes down/up to next row, rather than next line in file.
-noremap j gj
-noremap k gk
+" zsh and vim don't get along
+set shell=bash
 
-" fuckups - If I don't let off the shift key quick enough
-command! Q :q
-command! W :w
-command! Wa :wa
-command! Wqa :wqa
-command! E :e
+" Save files when vim loses focus
+au FocusLost * :wa
+
+" tabs are spaces
+set tabstop=2
+set smarttab
+set shiftwidth=2
+set autoindent
+set expandtab
+set cursorline
+
+" ============== File Type settings ==================
+
+" remove trailing whitespace automatically
+autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" retab on write
+autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :set et | retab
+
+augroup filetype_go
+  autocmd!
+
+  autocmd FileType go set tabstop=4|set shiftwidth=4|set expandtab|set autoindent|set nolist
+augroup END
 
 
 " vim rspec mappings
 let g:rspec_runner = "os_x_iterm"
-let g:rspec_command = "rff {spec}"
+let g:rspec_command = "r {spec}"
 map <Bslash>t :call RunCurrentSpecFile()<CR>
 map <Bslash>s :call RunNearestSpec()<CR>
 map <Bslash>l :call RunLastSpec()<CR>
 map <Bslash>a :call RunAllSpecs()<CR>
+
+nnoremap <silent> <esc> :noh<cr><esc>
 
 " Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
 vmap <Enter> <Plug>(EasyAlign)
@@ -212,139 +188,7 @@ vmap <Enter> <Plug>(EasyAlign)
 nmap <Leader>l <Plug>(EasyAlign)
 
 set shortmess=a
+set cmdheight=2
 
-let g:clang_format#style_options = {
-      \ "AccessModifierOffset" : -4,
-      \ "AllowShortIfStatementsOnASingleLine" : "true",
-      \ "AlwaysBreakTemplateDeclarations" : "true",
-      \ "Standard" : "C++11"}
-
-set makeprg="make -j9"
-nnoremap <Leader>M :make!<CR>
-
-" airline
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#branch#enabled = 1
-let g:airline_left_sep=''
-let g:airline_left_alt_sep=''
-let g:airline_right_sep=''
-let g:airline_right_alt_sep=''
-
-let g:tagbar_type_go = {
-      \ 'ctagstype' : 'go',
-      \ 'kinds'     : [
-      \ 'p:package',
-      \ 'i:imports:1',
-      \ 'c:constants',
-      \ 'v:variables',
-      \ 't:types',
-      \ 'n:interfaces',
-      \ 'w:fields',
-      \ 'e:embedded',
-      \ 'm:methods',
-      \ 'r:constructor',
-      \ 'f:functions'
-      \ ],
-      \ 'sro' : '.',
-      \ 'kind2scope' : {
-      \ 't' : 'ctype',
-      \ 'n' : 'ntype'
-      \ },
-      \ 'scope2kind' : {
-      \ 'ctype' : 't',
-      \ 'ntype' : 'n'
-      \ },
-      \ 'ctagsbin'  : 'gotags',
-      \ 'ctagsargs' : '-sort -silent'
-      \ }
-
-
-" go
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-
-" Tagbar
-map <leader>tt :TagbarToggle<cr>
-
-if !exists("*s:MkNonExDir")
-  " create parent directories on write
-  function s:MkNonExDir(file, buf)
-    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
-      let dir=fnamemodify(a:file, ':h')
-      if !isdirectory(dir)
-        call mkdir(dir, 'p')
-      endif
-    endif
-  endfunction
-endif
-
-if has("autocmd")
-  augroup filetype_ruby
-    autocmd!
-    autocmd FileType ruby set tabstop=2|set shiftwidth=2|set expandtab|set autoindent
-    autocmd FileType ruby nmap <leader>rs :!ruby -c %:p<CR>
-    autocmd FileType ruby nmap <leader>rb :!rubocop -ad %:p<CR>
-    autocmd FileType ruby nmap <leader>r19 :s/\v:([0-9a-z_]+)\s+\=\>\s+/\1: /g<CR>
-    autocmd FileType ruby nmap <leader>r18 :s/\v([0-9a-z_"']+):\s+(.*)/:\1 => \2/g<CR>
-  augroup END
-
-  augroup straggelers
-    autocmd!
-    " remove trailing spaces
-    autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
-    " remove trailing whitespace automatically
-    autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :set et | retab
-  augroup END
-
-  augroup filetype_haml
-    autocmd!
-    autocmd FileType haml set tabstop=2|set shiftwidth=2|set expandtab|set autoindent
-  augroup END
-
-  augroup filetype_yaml
-    autocmd!
-    autocmd FileType yaml set tabstop=2|set shiftwidth=2|set expandtab|set autoindent
-  augroup END
-
-  augroup filetype_perl
-    autocmd!
-    autocmd FileType perl set tabstop=8|set shiftwidth=8|set noexpandtab|set nolist
-  augroup END
-
-  augroup filetype_c
-    autocmd!
-    " map to <Leader>cf in C++ code
-    autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-    autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
-    " if you install vim-operator-user
-    autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
-    " Toggle auto formatting:
-    nmap <Leader>C :ClangFormatAutoToggle<CR>
-  augroup END
-
-  augroup filetype_go
-    autocmd!
-
-    autocmd FileType go set tabstop=4|set shiftwidth=2|set expandtab|set autoindent|set nolist
-
-    autocmd FileType go nmap <Leader>dc  <Plug>(go-doc)
-    autocmd FileType go nmap <Leader>ce  <Plug>(go-callees)
-    autocmd FileType go nmap <Leader>cl  <Plug>(go-callers)
-    autocmd FileType go nmap <Leader>cs  <Plug>(go-callstack)
-    autocmd FileType go nmap <Leader>d   <Plug>(go-describe)
-    autocmd FileType go nmap <Leader>in  <Plug>(go-info)
-    autocmd FileType go nmap <Leader>ii  <Plug>(go-implements)
-    autocmd FileType go nmap <Leader>r   <Plug>(go-referrers)
-    autocmd FileType go nmap <Leader>i   :GoImports<CR>
-
-  augroup END
-
-  augroup BWCCreateDir
-    autocmd!
-    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
-  augroup END
-endif
+nmap <silent> gl <ESC>:w<CR>:SyntasticCheck<CR>:Errors<CR>
+imap <tab> esc>
