@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
 source $HOME/.aliases #aliasess
+source $HOME/.keys    #keys
+source ~/.profile
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -41,8 +43,10 @@ fi
 export HISTFILESIZE=9999
 export HISTSIZE=9999
 
+export GOPATH="$HOME/go"
 
 export PATH="$HOME/sbin:/usr/local/bin:$PATH:/usr/local/git/bin:/usr/local/sbin:$GOPATH/bin"
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 alias record="asciinema"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
