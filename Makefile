@@ -8,6 +8,7 @@ shell:
 	ln -fs ${DOTFILES}/aliases ${HOME}/.aliases
 	sh ${DOTFILES}/zsh/oh_my_zsh ${DOTFILES}
 	ln -fs ${DOTFILES}/zsh/zshrc ${HOME}/.zshrc
+	ln -fns $(DOTFILES)/etc/ ${HOME}/etc
 
 vim:
 	ln -fns $(DOTFILES)/vim/* ${HOME}/.vim
