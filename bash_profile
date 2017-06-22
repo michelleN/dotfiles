@@ -42,11 +42,10 @@ export HISTFILESIZE=9999
 export HISTSIZE=9999
 
 
+export GOPATH="$HOME/go"
 export PATH="$HOME/sbin:/usr/local/bin:$PATH:/usr/local/git/bin:/usr/local/sbin:$GOPATH/bin"
 alias record="asciinema"
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 export PATH=$PATH:$HOME/dotfiles/bin
-
-PS1='\w \$ '

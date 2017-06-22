@@ -30,8 +30,5 @@ if [[ -s $(which keychain 2>/dev/null) ]]; then
   keychain ~/.ssh/id_rsa
 fi
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-
 # added by travis gem
 [ -f /Users/michellenoorali/.travis/travis.sh ] && source /Users/michellenoorali/.travis/travis.sh
