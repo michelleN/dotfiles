@@ -3,4 +3,5 @@
 - Install iTerm2 `brew cask install iterm2`
 - Install MacVim `brew install macvim`
 - Install Slack `brew cask install slack`
+- Install Spotify `brew cask install spotify`
 
