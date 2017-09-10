@@ -3,3 +3,6 @@
 alias helmcode='cd $GOPATH/src/k8s.io/kubernetes/helm'
 alias walksee='cd $GOPATH/src/github.com/michelleN/walksee'
 alias draftcode='cd $GOPATH/src/github.com/Azure/draft'
+
+alias k='kubectl'
+alias ks='kubectl -n kube-system'
