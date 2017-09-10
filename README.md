@@ -1,3 +1,5 @@
+First thing's first, install Chrome.
+
 - Install Xcode & command line tools from App Store
 - Install Homebrew from http://brew.sh/
 - Install iTerm2 `brew cask install iterm2`
