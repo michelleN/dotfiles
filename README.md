@@ -7,6 +7,7 @@ Homebrew + formulas
 - Install Slack `brew cask install slack`
 - Install Spotify `brew cask install spotify`
 - Install SizeUp `brew cask install sizeup`
+- Install Evernote `brew cask install evernote`
 
 SSH / Github
 - Generate keys by following instructions [here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
