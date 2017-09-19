@@ -14,4 +14,4 @@ SSH / Github
 - Add new SSH key [here](https://github.com/settings/keys)
 
 GoLang
-- Install Go: (https://golang.org/dl/)[https://golang.org/dl/]
+- Install Go: [https://golang.org/dl/](https://golang.org/dl/)
