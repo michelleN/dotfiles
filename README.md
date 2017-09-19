@@ -9,6 +9,7 @@ Homebrew + formulas
 - Install SizeUp `brew cask install sizeup`
 - Install Evernote `brew cask install evernote`
 - Install Glide `brew install glide`
+- Install Ack `brew install ack`
 
 SSH / Github
 - Generate keys by following instructions [here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
