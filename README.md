@@ -12,3 +12,6 @@ Homebrew + formulas
 SSH / Github
 - Generate keys by following instructions [here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 - Add new SSH key [here](https://github.com/settings/keys)
+
+GoLang
+- Install Go: (https://golang.org/dl/)[https://golang.org/dl/]
