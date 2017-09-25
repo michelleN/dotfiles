@@ -11,7 +11,7 @@ shell:
 	ln -fns $(DOTFILES)/etc/ ${HOME}/etc
 
 vim:
-	mkdir ${HOME}/.vim
+	mkdir -p ${HOME}/.vim
 	ln -fns $(DOTFILES)/vim/* ${HOME}/.vim
 	ln -fs $(DOTFILES)/vim/vimrc ${HOME}/.vimrc
 	ln -fs $(DOTFILES)/vim/vimrc.bundles ${HOME}/.vimrc.bundles
