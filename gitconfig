@@ -6,6 +6,7 @@
 	cp = cherry-pick
 	cv = commit -v
 	f = fetch
+	fa = fetch --all --tags
 	pl = pull --rebase
 	ri = rebase -i
 	st = status
