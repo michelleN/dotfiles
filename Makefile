@@ -20,3 +20,7 @@ vim:
 git:
 	ln -fs $(DOTFILES)/gitconfig ${HOME}/.gitconfig
 	ln -fs $(DOTFILES)/gitignore ${HOME}/.gitignore
+
+shortcuts:
+	mkdir -p ${HOME}/.shortcuts
+	ln -fs $(DOTFILES)/shortcuts/ ${HOME}/.shortcuts/
