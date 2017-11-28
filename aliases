@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-alias helmcode='cd $GOPATH/src/k8s.io/kubernetes/helm'
+alias helmcode='cd $GOPATH/src/k8s.io/helm'
 alias walksee='cd $GOPATH/src/github.com/michelleN/walksee'
 alias draftcode='cd $GOPATH/src/github.com/Azure/draft'
 alias draft-examples='cd $GOPATH/src/github.com/Azure/draft/examples/'
