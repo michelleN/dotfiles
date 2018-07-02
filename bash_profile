@@ -49,3 +49,4 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 
 export PATH=$PATH:$HOME/dotfiles/bin
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
