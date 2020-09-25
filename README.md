@@ -11,6 +11,7 @@ Homebrew + formulas
 - Install Glide `brew install glide`
 - Install Ack `brew install ack`
 - Install VSCode
+- Install Rectangle `brew cask install rectangle`
 
 SSH / Github
 - Generate keys by following instructions [here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
