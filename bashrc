@@ -1,13 +1,9 @@
 #!/usr/bin/env sh
-## source cinderella bash completions
-if [[ -d "$HOME/etc/bash_completion.d" ]] ; then
-    source $HOME/etc/bash_completion.d/*.bash
-fi
 
 ## Set ls options per platform
 if [[ $OSTYPE == 'linux-gnu' ]]; then
   alias ls='ls -p --color=auto'
-elif [[ $OSTYPE == 'darwin10.0' ]]; then
+elif [[ $OSTYPE == 'darwin21' ]]; then
   alias ls='ls -Gp'
 fi
 
@@ -29,6 +25,3 @@ fi
 if [[ -s $(which keychain 2>/dev/null) ]]; then
   keychain ~/.ssh/id_rsa
 fi
-
-# added by travis gem
-[ -f /Users/michellenoorali/.travis/travis.sh ] && source /Users/michellenoorali/.travis/travis.sh
