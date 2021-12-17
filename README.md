@@ -2,6 +2,8 @@
 
 Homebrew + formulas
 - Install Homebrew using `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` *This will also install xcode command line tools*
+// TODO add homebrew formulas to script and create a make target
+- Install git `brew install git`
 - Install iTerm2 `brew cask install iterm2`
 - Install MacVim `brew install macvim`
 - Install Slack `brew cask install slack`
