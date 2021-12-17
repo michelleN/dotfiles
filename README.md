@@ -6,10 +6,10 @@ Homebrew + formulas
 // TODO add homebrew formulas to script and create a make target
 - Install git `brew install git`
 - Install iTerm2 `brew cask install iterm2`
-- Install MacVim `brew install macvim`
+- ~Install MacVim `brew install macvim`~
 - Install Slack `brew cask install slack`
 - Install Spotify `brew cask install spotify`
-- Install SizeUp `brew cask install sizeup`
+- ~Install SizeUp `brew cask install sizeup`~
 - Install Evernote `brew cask install evernote`
 - Install Glide `brew install glide`
 - Install Ack `brew install ack`
