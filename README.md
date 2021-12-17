@@ -13,7 +13,7 @@ Homebrew + formulas
 - ~Install Evernote `brew cask install evernote`~
 - ~Install Glide `brew install glide`~
 - ~Install Ack `brew install ack`~
-- Install VSCode
+- Install VSCode `brew install visual-studio-code`
 - Install Rectangle `brew cask install rectangle`
 
 SSH / Github
