@@ -17,6 +17,7 @@ Homebrew + formulas
 - Install Rectangle `brew cask install rectangle`
 
 SSH / Github
+- Set up Git using github docs [here](https://docs.github.com/en/get-started/quickstart/set-up-git)
 - Generate keys by following instructions [here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 - Add new SSH key [here](https://github.com/settings/keys)
 
