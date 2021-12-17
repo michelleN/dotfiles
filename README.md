@@ -1,4 +1,5 @@
 - Install Chrome
+- Enable 3 finger drag (System Preferences -> Accessibility)
 
 Homebrew + formulas
 - Install Homebrew using `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` *This will also install xcode command line tools*
