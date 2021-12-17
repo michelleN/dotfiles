@@ -14,7 +14,7 @@ Homebrew + formulas
 - ~Install Glide `brew install glide`~
 - ~Install Ack `brew install ack`~
 - Install VSCode `brew install visual-studio-code`
-- Install Rectangle `brew cask install rectangle`
+- Install Rectangle `brew install rectangle`
 
 SSH / Github
 - Set up Git using github docs [here](https://docs.github.com/en/get-started/quickstart/set-up-git)
