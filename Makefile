@@ -24,6 +24,7 @@ git:
 	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh -o ~/.zsh/_git
 	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 	chmod +x ~/.git-completion.bash
+	# tell zsh where git bash completion file is
 	echo "zstyle ':completion:*:*:git:*' script ~/.git-completion.bash" >> ~/.zshrc
 	ln -fs $(DOTFILES)/gitconfig ${HOME}/.gitconfig
 	ln -fs $(DOTFILES)/gitignore ${HOME}/.gitignore
