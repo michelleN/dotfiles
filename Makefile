@@ -23,7 +23,7 @@ git:
 	chmod +x ~/.git-completion.bash
 	ln -fs $(DOTFILES)/gitconfig ${HOME}/.gitconfig
 	ln -fs $(DOTFILES)/gitignore ${HOME}/.gitignore
-	source ~/.bash_profile
+	#source ~/.bash_profile
 
 shortcuts:
 	mkdir -p ${HOME}/.shortcuts
