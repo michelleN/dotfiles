@@ -10,9 +10,9 @@ Homebrew + formulas
 - Install Slack `brew install slack`
 - Install Spotify `brew cask install spotify`
 - ~Install SizeUp `brew cask install sizeup`~
-- Install Evernote `brew cask install evernote`
-- Install Glide `brew install glide`
-- Install Ack `brew install ack`
+- ~Install Evernote `brew cask install evernote`~
+- ~Install Glide `brew install glide`~
+- ~Install Ack `brew install ack`~
 - Install VSCode
 - Install Rectangle `brew cask install rectangle`
 
