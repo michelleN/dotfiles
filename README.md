@@ -9,7 +9,7 @@ Homebrew + formulas
 - Install iTerm2 `brew install cask iterm2`
 - ~Install MacVim `brew install macvim`~
 - Install Slack `brew install slack`
-- Install Spotify `brew cask install spotify`
+- Install Spotify `brew install spotify`
 - ~Install SizeUp `brew cask install sizeup`~
 - ~Install Evernote `brew cask install evernote`~
 - ~Install Glide `brew install glide`~
