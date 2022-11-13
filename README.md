@@ -1,4 +1,4 @@
-- Install Chrome
+- Install Chrome & Firefox
 - Enable 3 finger drag (System Preferences -> Accessibility)
 
 Homebrew + formulas
