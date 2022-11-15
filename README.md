@@ -2,7 +2,7 @@
 - Enable 3 finger drag (System Preferences -> Accessibility)
 
 Homebrew + formulas
-- Install Homebrew using `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` *This will also install xcode command line tools*
+- Install Homebrew using `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` *This will also install xcode command line tools*
 // TODO add homebrew formulas to script and create a make target
 // After installing git, set up git using info below
 - Install git `brew install git`
