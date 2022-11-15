@@ -27,3 +27,4 @@ GoLang
 
 Other:
 - Install Zoom
+- Install Notion desktop client
