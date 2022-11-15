@@ -24,3 +24,6 @@ SSH / Github
 
 GoLang
 - Install Go: [https://golang.org/dl/](https://golang.org/dl/)
+
+Other:
+- Install Zoom
