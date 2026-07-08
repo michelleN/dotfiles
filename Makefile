@@ -20,7 +20,7 @@ vim:
 
 git:
 	mkdir -p ~/.zsh
-	echo "fpath=(~/.zsh $fpath)" >> ~/.zshrc
+    echo "fpath=(~/.zsh \$fpath)" >> ~/.zshrc
 	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh -o ~/.zsh/_git
 	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 	chmod +x ~/.git-completion.bash
